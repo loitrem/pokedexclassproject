@@ -98,23 +98,24 @@ app.get("/", (req, res) => {
     });
 });
 
-app.get("/:id", (req, res) => {
-    let count = parseInt(req.params.id);
-    Pokemon.find({}).then((allPokemon) => {
-    res.render(`Index`, {
-        pokemon: allPokemon,
-        count: count
-    });
-    });
-});
-
-
 app.get("/add", (req, res) => {
     res.render("Add");
 });
 
 //get new pokemon, add it and redirect to pokemon index
 app.post("/addsubmit", async (req, res) => {
+    let typeArr = []
+    let abilityArr = []
+    req.body.type ? typeArr.push(req.body.type): ''
+    req.body.type2 ? typeArr.push(req.body.type2): ''
+    req.body.abilities ? abilityArr.push(req.body.abilities): ''
+    req.body.abilities2 ? abilityArr.push(req.body.abilities2): ''
+
+    req.body.type = typeArr;
+    req.body.abilities = abilityArr;
+
+    console.log('tttttt ',req.body.type,req.body.abilities);
+
     await Pokemon.create(req.body)
     res.redirect("/")
 });
@@ -132,6 +133,16 @@ app.post("/api", async (req, res) => {
         await Pokemon.deleteMany({});
     }
     res.redirect("/")
+});
+
+app.get("/:id", (req, res) => {
+    let count = parseInt(req.params.id);
+    Pokemon.find({}).then((allPokemon) => {
+    res.render(`Index`, {
+        pokemon: allPokemon,
+        count: count
+    });
+    });
 });
 // -------{POST}
 
@@ -157,46 +168,15 @@ app.put("/updatesubmit/:id", async (req, res) => {
 });
 
 //removes selected pokemon and redirect to pokemon index
-app.post("/removeselected/:id", async (req, res) => {
+app.delete("/delete/:id", async (req, res) => {
+    try{
     //delete object/document
-
-    await Pokemon.deleteOne({_id: req.body.pokemon});
+    await Pokemon.findByIdAndDelete(req.params.id);
 
     res.redirect("/")
-});
-
-//form to enter new fruit
-app.get("/add", (req, res) => {
-    res.render("Add");
-});
-
-// //delete a record
-// app.get("/test", (req, res) => {
-//     Pokemon.find({}).then((allPokemon) => {
-//         res.render("test", {
-//             pokemon: allPokemon,
-//         });
-//     });
-// });
-// //delete a record
-// app.post("/test2", (req, res) => {
-//     Pokemon.findById(req.body.pokemon).then((currentPokemon) => {
-//         res.redirect(`/testdel/${currentPokemon.id}`)
-//     });
-// });
-
-// //form to enter new fruit
-// app.delete("/testdel/:id", (req, res) => {
-//     Pokemon.deleteOne({_id: req.params.id})
-//     res.redirect("/")
-// });
-
-//view fruit by id
-app.get("/showPokemon/:id", async (req, res) => {
-    const eachPokemon = await Pokemon.findById(req.params.id)
-    await res.render("Display",{
-    pokemon: eachPokemon
-    })
+    } catch (err){
+        res.send(err)
+    }
 });
 
 

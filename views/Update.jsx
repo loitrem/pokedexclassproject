@@ -56,6 +56,10 @@ console.log(pokemon);
                                 <div className="inputTag"><input className='input' type="text" name="name" defaultValue={pokemon.name} /></div>
                             </div>
                             <div className="inputWrapper">
+                                    <div className="inputTitle">Image Url: </div>
+                                    <div className="inputTag"><input className='input' type="text" name="img" defaultValue={pokemon.img} /></div>
+                                </div>
+                            <div className="inputWrapper">
                                 <div className="inputTitle">{'Height(decimetres)'}: </div>
                                 <div className="inputTag"><input className='input' type="number" name="height" defaultValue={pokemon.height ? pokemon.height : ''}/></div>
                             </div>

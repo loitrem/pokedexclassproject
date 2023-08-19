@@ -56,6 +56,10 @@ function Add() {
                                     <div className="inputTag"><input className='input' type="text" name="name" /></div>
                                 </div>
                                 <div className="inputWrapper">
+                                    <div className="inputTitle">Image Url: </div>
+                                    <div className="inputTag"><input className='input' type="text" name="img" /></div>
+                                </div>
+                                <div className="inputWrapper">
                                     <div className="inputTitle">{'Height(decimetres)'}: </div>
                                     <div className="inputTag"><input className='input' type="number" name="height"/></div>
                                 </div>
@@ -73,11 +77,11 @@ function Add() {
                                 </div>
                                 <div className="inputWrapper">
                                     <div className="inputTitle">Ability:</div>
-                                    <div className="inputTag"><input className='input' type="text" name="ability"/></div>
+                                    <div className="inputTag"><input className='input' type="text" name="abilities"/></div>
                                 </div>
                                 <div className="inputWrapper">
                                     <div className="inputTitle">Ability:</div>
-                                    <div className="inputTag"><input className='input' type="text" name="ability2"/></div>
+                                    <div className="inputTag"><input className='input' type="text" name="abilities2"/></div>
                                 </div>
                                 <div className="inputWrapper">
                                     <input className='inputSubmit' type="submit" name="" value="Add Pokemon" />

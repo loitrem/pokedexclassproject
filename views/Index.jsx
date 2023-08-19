@@ -2,9 +2,9 @@ import React from 'react'
 
 
 function Index(props) {
+
     const pokemon = props.pokemon;
     let count = props.count;
-
 
     const ucFirst = (x) => {
 
@@ -29,7 +29,7 @@ function Index(props) {
                         <div className="left">
                     <div className="imageWrapper">
                         <div className="image">
-                            <img src={pokemon[count].img} alt="" className="pokemonImg" />
+                            {pokemon.length!=0 ?  <img src={pokemon[count].img} alt="" className="pokemonImg" /> : '' }
                         </div>
                     </div>
                     <div className="buttonBoxWrapper">
@@ -56,11 +56,11 @@ function Index(props) {
                     <div className="searchBoxWrapper">
                         <div className="searchBox">
                             <div className="menu">
-                                <form className='formButtons' action={`/update/${pokemon[count].id}`} method="POST">
+                                <form className='formButtons' action={ pokemon.length!=0 ? `/update/${pokemon[count].id}`:''} method="POST">
                                     <div className="menuItem"><button className="menuLink">Edit</button> </div>
                                 </form>
-                                <form className='formButtons' action="/delete" method="GET">
-                                    <div className="menuItem"><button className="menuLink">Delete</button> </div>
+                                <form className='formButtons' action={ pokemon.length!=0 ? `/delete/${pokemon[count].id}?_method=DELETE`:''} method="POST">
+                                    <div className="menuItem"><button type='submit' className="menuLink">Delete</button> </div>
                                 </form>
                                 <form className='formButtons' action="/add" method="GET">
                                     <div className="menuItem"><button className="menuLink">New</button> </div>
@@ -78,30 +78,30 @@ function Index(props) {
                             <div className="infoTitle">Pokemon Information</div>
                             <div className="nameWrapper">
                                 <div className="nameTitle">Name: </div>
-                                <div className="name">{ucFirst(pokemon[count].name)}</div>
+                                <div className="name">{ pokemon.length!=0 ? ucFirst(pokemon[count].name):''}</div>
                             </div>
                             <div className="heightWrapper">
                                 <div className="heightTitle">Height: </div>
-                                <div className="height">{pokemon[count].height} ft</div>
+                                <div className="height">{ pokemon.length!=0 ? pokemon[count].height :''} ft</div>
                             </div>
                             <div className="weightWrapper">
                                 <div className="weightTitle">Weight: </div>
-                                <div className="weight">{pokemon[count].weight} lbs</div>
+                                <div className="weight">{ pokemon.length!=0 ? pokemon[count].weight :''} lbs</div>
                             </div>
                             <div className="typeWrapper">
                                 <div className="typeTitle">Type: </div>
                                 <div className="listWrapper">
-                                    <div className="type">{pokemon[count].type.map((current)=>{
-                                            return <div className="list">{ucFirst(current)}</div>
-                                        })}
+                                    <div className="type">{ pokemon.length!=0 ? pokemon[count].type.map((current, i)=>{
+                                            return <div key={i} className="list">{ucFirst(current)}</div>
+                                        }):''}
                                     </div>
                                 </div>
                             </div>
                             <div className="abilitiesWrapper">
                                 <div className="abilitiesTitle">Abilities: </div>
-                                <div className="abilities">{pokemon[count].abilities.map((current)=>{
-                                        return <div className="list">{ucFirst(current)}</div>
-                                    })}
+                                <div className="abilities">{ pokemon.length!=0 ? pokemon[count].abilities.map((current, i)=>{
+                                        return <div key={i} className="list">{ucFirst(current)}</div>
+                                    }):''}
                                 </div>
                             </div>
                         </div>
@@ -111,32 +111,6 @@ function Index(props) {
                 </div>
             </div>
         </div>
-        // <div>
-        //     {/* <DefaultLayout title={"Pokemon Index Page"}> */}
-        //     <h1 className='test'>POKEDEX</h1>
-        //     <nav>
-        //         <h3><a href="/add">Add New Pokemon</a></h3>
-        //         <h3><a href="/update">Edit Pokemon</a></h3>
-        //         <h3><a href="/remove">Delete Pokemon</a></h3>
-        //         <br></br>
-        //         <h3><a href="/api">Add API Data</a></h3>
-        //     </nav>
-        //     <p><h2>Pokemon</h2></p>
-        // <br></br>
-        //     {pokemon!=null ?pokemon.map((pokemon, i) => {
-        //         return (
-        //             <div key={i}>
-        //                 <li>
-        //                     <a href={`/showPokemon/${pokemon.id}`}>
-        //                         <h2>{pokemon.name}</h2>
-        //                     </a>{' '}
-        //                     <br />
-        //                 </li>
-        //             </div>
-        //         );
-        //     }):''}
-        // {/* </DefaultLayout> */}
-        // </div>
     )
 }
 
