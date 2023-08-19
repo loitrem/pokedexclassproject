@@ -1,0 +1,408 @@
+body{
+    margin: 0;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: beige;
+}
+
+.mainWrapper {
+    padding: 10px;
+}
+
+.main {
+    background-color: rgb(185, 0, 0);
+    box-shadow: 0 0 15px 5px black, inset 0 0 10px 3px black;
+    border-radius: 15px;
+}
+
+.headerWrapper {
+
+}
+
+.header {
+    width: 100%;
+    height: 12vh;
+    border-bottom: 4px groove rgb(205, 0, 0);
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 10vh;
+    margin-left: 50px;
+}
+
+.innerWrapper {
+
+}
+
+.inner {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.left {
+    border-right: 6px groove rgb(205, 0, 0);
+}
+
+.imageWrapper {
+    width: 30vw;
+    height: 55vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image {
+    width: 95%;
+    height: 95%;
+    background-color: rgb(166, 166, 166);
+    box-shadow: 0px 0px 10px 3px rgb(63, 0, 0), 0px 0px 5px 10px inset rgb(212, 212, 212, .6);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pokemonImg {
+max-height: 95%;
+max-width: 95%;
+}
+
+.buttonBoxWrapper {
+    width: 30vw;
+    height: 14vh;
+    display: flex;
+    justify-content: center;
+    border-top: 4px groove rgb(205, 0, 0);
+}
+
+.buttonBox {
+    width: 95%;
+    height: 95%;  
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.buttonLeft {
+width: 100%;
+height: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.buttonForm{
+    width: 60%;
+    height: 80%;
+}
+
+.btnLeft {
+width: 100%;
+height: 100%;
+background-color: rgb(174, 189, 5);
+border: 4px groove rgb(205, 0, 0); 
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 46px;
+font-weight: bold;
+border-radius: 50%;
+color: rgb(138, 148, 29);
+text-shadow: 1px 1px rgb(246, 255, 147), -1px -1px #272400;
+box-shadow: 0px 0px 10px 5px inset rgba(31, 31, 0, 0.6);
+}
+
+.btnLeft:hover {
+    cursor: pointer;
+}
+
+.btnLeft:active {
+    background-color: rgb(162, 176, 7);
+    font-size: 45px;
+    box-shadow: 0px 0px 10px 7px inset rgba(31, 31, 0, 0.6);
+}
+
+.buttonRight {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    
+.buttonForm{
+    width: 60%;
+    height: 80%;
+}
+
+.btnRight {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(174, 189, 5);
+    border: 4px groove rgb(205, 0, 0); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 46px;
+    font-weight: bold;
+    border-radius: 50%;
+    color: rgb(138, 148, 29);
+    text-shadow: 1px 1px rgb(246, 255, 147), -1px -1px #272400;
+    box-shadow: 0px 0px 10px 5px inset rgba(31, 31, 0, 0.6);
+}
+
+.btnRight:hover {
+    cursor: pointer;
+}
+
+.btnRight:active {
+    background-color: rgb(162, 176, 7);
+    font-size: 45px;
+    box-shadow: 0px 0px 10px 7px inset rgba(31, 31, 0, 0.6);
+}
+
+.searchBoxWrapper {
+    width: 30vw;
+    height: 14vh;
+    display: flex;
+    justify-content: space-evenly;
+    border-top: 4px groove rgb(205, 0, 0); 
+}
+
+.searchBox {
+    width: 95%;
+    height: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.menuLink {
+    width: 90%;
+    height: 55%;
+    border: 1px inset rgb(205, 0, 0); 
+    background-color: rgb(185, 0, 0);
+    margin-left: 3px;
+    margin-right: 3px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(70, 0, 0);
+}
+
+.menuLink:hover {
+    cursor: pointer;
+}
+
+.menuLink:active {
+    box-shadow: 0px 0px 4px 2px inset rgba(81, 0, 0, 0.6);
+    font-size: 19px;
+    color: rgb(255, 232, 128);
+}
+
+.formButtons {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.menuItem {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right {
+    border-left: 4px groove rgb(205, 0, 0); 
+}
+
+.infoWrapper {
+    width: 66vw;
+    height: 84vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info {
+    width: 95%;
+    height: 95%;
+    border-radius: 10px;
+    font-size: 40px;
+    background-color: rgb(166, 166, 166);
+    box-shadow: 0px 0px 10px 3px rgb(63, 0, 0), 0px 0px 5px 10px inset rgb(212, 212, 212, .6);
+}
+
+.infoTitle {
+    font-size: 65px;
+    font-weight: bold;
+    margin-left: 35px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+
+.nameWrapper {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 35px;
+}
+
+.nameTitle {
+    width: 20%;
+    font-weight: bold;
+}
+
+.name {
+    
+}
+
+.heightWrapper {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 35px;
+}
+
+.heightTitle {
+    width: 20%;
+    font-weight: bold;
+}
+
+.height {
+
+}
+
+.weightWrapper {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 35px;
+}
+
+.weightTitle {
+    width: 20%;
+    font-weight: bold;
+}
+
+.weight {
+    
+}
+
+.typeWrapper {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 35px;
+}
+
+.typeTitle {
+    width: 20%;
+    font-weight: bold;
+}
+
+.type {
+    display: flex;
+    flex-direction: column;
+}
+
+.abilitiesWrapper {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 35px;
+}
+
+.abilitiesTitle {
+    width: 20%;
+    font-weight: bold;
+}
+
+.abilities {
+    display: flex;
+    flex-direction: column;
+}
+
+.form {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 15px;
+    width: 100%;
+    
+}
+
+.inputWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.inputTitle {
+    width: 50%;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.inputTag {
+    width: 50%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.input {
+    font-size: 18px;
+}
+
+.inputSubmit {
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 30px;
+    background-color: rgb(28, 28, 28);
+    color: whitesmoke;
+    border: solid black;
+    border-radius: 5px;
+    height: 35px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.inputSubmit:hover {
+    cursor: pointer;
+    background-color: rgb(87, 87, 87);
+}
+
+.title {
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
