@@ -76,8 +76,8 @@ const addPokemon=async(data)=>{
                 img: thisPokemon.sprites.other.home.front_default,
                 type: diffTypes,
                 abilities: diffAbilities,
-                height: ((thisPokemon.height/10)*3.28084).toFixed(2),
-                weight: ((thisPokemon.weight/10)*2.20462).toFixed(2)
+                height: thisPokemon.height,
+                weight: thisPokemon.weight
             }
 
             Pokemon.create(newPokemon)

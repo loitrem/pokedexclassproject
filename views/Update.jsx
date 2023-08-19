@@ -1,8 +1,13 @@
 import React from 'react'
 
 function Update(props) {
+
+    props.pokemon.length!=0 ? props.pokemon.height = ((props.pokemon.height/10)*3.28084).toFixed(2):'';
+    props.pokemon.length!=0 ? props.pokemon.weight = ((props.pokemon.weight/10)*2.20462).toFixed(2):'';
+
+
     const pokemon = props.pokemon;
-console.log(pokemon);
+
     return (
         <div className="mainWrapper">
         <link rel="stylesheet" type="text/css" href="/css/style.css" />

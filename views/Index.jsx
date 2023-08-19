@@ -3,8 +3,14 @@ import React from 'react'
 
 function Index(props) {
 
+
+    props.pokemon.length!=0 ? props.pokemon[props.count].height = ((props.pokemon[props.count].height/10)*3.28084).toFixed(2):'';
+    props.pokemon.length!=0 ? props.pokemon[props.count].weight = ((props.pokemon[props.count].weight/10)*2.20462).toFixed(2):'';
+
     const pokemon = props.pokemon;
     let count = props.count;
+
+    
 
     const ucFirst = (x) => {
 
@@ -36,20 +42,20 @@ function Index(props) {
                         <div className="buttonBox">
                             <div className="buttonLeft"> 
 
-                                {count>0 ? <form action={`/${count-1}`} className='buttonForm' method='GET'>
+                                {pokemon.length!=0 ?count>0 ? <form action={`/${count-1}`} className='buttonForm' method='GET'>
                                     <button className="btnLeft">PREV</button>
                                 </form>:
                                 <form action='/' className='buttonForm'>
                                     <button className="btnLeft">PREV</button>
-                                </form>}
+                                </form>:''}
                             </div>
                             <div className="buttonRight">
-                            {count<100 ? <form action={`/${count+1}`} className='buttonForm' method='GET'>
+                            {pokemon.length!=0 ?count<pokemon.length-1 ? <form action={`/${count+1}`} className='buttonForm' method='GET'>
                                 <button className="btnRight">NEXT</button>
                                 </form>: 
                                 <form className='buttonForm'>
                                     <button action='/' className="btnRight">NEXT</button>
-                                </form>}
+                                </form>:''}
                             </div>
                         </div>
                     </div>

@@ -16,8 +16,8 @@ function Add() {
                     <div className="inner">
                         <div className="left">
                     <div className="imageWrapper">
-                        <div className="image">
-                            <img src='' alt="" className="pokemonImg" />
+                        <div className="image">                  
+                            <img src='/images/add.png' alt="" className="pokemonImg" />
                         </div>
                     </div>
                     <div className="buttonBoxWrapper">
