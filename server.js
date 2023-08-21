@@ -23,7 +23,7 @@ app.engine('jsx', require('express-react-views').createEngine()); //starts engin
 app.use((req, res, next) => {
     console.log('I run for all routes');
     next();
-});
+}); 
 
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
@@ -113,8 +113,6 @@ app.post("/addsubmit", async (req, res) => {
 
     req.body.type = typeArr;
     req.body.abilities = abilityArr;
-
-    console.log('tttttt ',req.body.type,req.body.abilities);
 
     await Pokemon.create(req.body)
     res.redirect("/")
